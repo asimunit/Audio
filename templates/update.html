@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    
+    <div class="container">
+      
+        {% if result[0]  == 'song' %}
+        <form id="song_form" action="/update/song/{{result[1]}}" method="POST"  >
+            <h2>Update Songs</h2>
+            <hr><hr>
+            <div class="form-group">
+                <label for="Name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration:</label>
+                <input type="number" class="form-control" id="duration" placeholder="Enter duration" name="duration" required>
+            </div>
+            <input type="text" class="form-control"  name="audioFileType" value="song" style="display:none ;">
+            <button type="submit" class="btn btn-default">Submit</button>
+            
+        </form>
+        {% elif result[0] == 'podcast'%}
+
+        <form id="podcast_form" action="/update/podcast/{{result[1]}}" method="POST" >
+            <h2>update Podcast</h2>
+            <hr><hr>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration:</label>
+                <input type="number" class="form-control" id="duration" placeholder="Enter duration" name="duration">
+            </div>
+            <div class="form-group">
+                <label for="host">Host:</label>
+                <input type="" class="form-control" id="host" placeholder="Enter host" name="host">
+            </div>
+       
+            <input type="text" class="form-control"  name="audioFileType" value="podcast" style="display:none ;">
+            <button type="submit" class="btn btn-default">Submit</button>
+            
+        </form>
+        
+        {% elif result[0] == 'audio_book'%}
+
+
+        <form id="audiobook_form" action="/update/audio_book/{{result[1]}}" method="POST" >
+            <h2>update AudioBook</h2>
+            <hr><hr>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" class="form-control" id="author" placeholder="Enter author" name="author">
+            </div>
+            <div class="form-group">
+                <label for="narrator">Narrator:</label>
+                <input type="text" class="form-control" id="narrator" placeholder="Enter narrator" name="narrator">
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration:</label>
+                <input type="number" class="form-control" id="duration" placeholder="Enter duration" name="duration">
+            </div>
+            <input type="text" class="form-control"  name="audioFileType" value="audio_book" style="display:none ;">
+            <button type="submit" class="btn btn-default">Submit</button>
+           
+        </form>
+
+        {% endif %}
+    </div>
+</body>
+</html>

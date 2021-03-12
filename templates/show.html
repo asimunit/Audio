@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Show</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{result[0].type}} data</h1>
+        {% if result[0].type == 'song'%}
+        <table class="table">
+            <thead>
+
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">uploaded_At</th>
+                 
+                </tr>
+               
+            </thead>
+            <tbody>
+                {% for res in result %}
+                <tr>
+                    <th scope="row">{{ res.id }}</th>
+                    <td>{{ res.name}}</td>
+                    <td>{{res.duration}}</td>
+                    <td>{{res.uploaded_at}}</td>
+                   
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+        {% elif result[0].type == 'podcast'%}
+        <table class="table">
+            <thead>
+
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Host</th>
+                    <th scope="col">uploaded_At</th>
+                </tr>
+               
+            </thead>
+            <tbody>
+                {% for res in result %}
+                <tr>
+                    <th scope="row">{{ res.id }}</th>
+                    <td>{{ res.name}}</td>
+                    <td>{{res.duration}}</td>
+                    <td>{{res.host}}</td>
+                    <td>{{res.uploaded_at}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+
+        {% elif result[0].type == 'audio_book'%}
+        <table class="table">
+            <thead>
+
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Narrator</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">uploaded_At</th>
+                </tr>
+               
+            </thead>
+            <tbody>
+                {% for res in result %}
+                <tr>
+                    <th scope="row">{{ res.id }}</th>
+                    <td>{{ res.title}}</td>
+                    <td>{{res.author}}</td>
+                    <td>{{res.narrator}}</td>
+                    <td>{{res.duration}}</td>
+                    <td>{{res.uploaded_at}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</body>
+
+</html>

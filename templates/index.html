@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+      
+            
+        
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"><h1>AudioWorld</h1></div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"><button type="button" id="song" class="btn btn-primary">Song</button></div>
+            <div class="col-lg-4"><button type="button" id="podcast" class="btn btn-success">Podcast</button></div>
+            <div class="col-lg-4"><button type="button" id="audiobook" class="btn btn-warning">AudioBook</button></div>
+        </div>
+        <br><br>
+
+        <form id="song_form" action="/create" method="POST"  style="display: none;">
+            <h2>Songs</h2>
+            <hr><hr>
+            <div class="form-group">
+                <label for="Name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration:</label>
+                <input type="number" class="form-control" id="duration" placeholder="Enter duration" name="duration" required>
+            </div>
+            <input type="text" class="form-control"  name="audioFileType" value="song" style="display:none ;">
+            <button type="submit" class="btn btn-default">Submit</button>
+            
+        </form>
+
+
+
+
+        <form id="podcast_form" action="/create" method="POST" style="display: none;">
+            <h2>Podcast</h2>
+            <hr><hr>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration:</label>
+                <input type="number" class="form-control" id="duration" placeholder="Enter duration" name="duration">
+            </div>
+            <div class="form-group">
+                <label for="host">Host:</label>
+                <input type="" class="form-control" id="host" placeholder="Enter host" name="host">
+            </div>
+       
+            <input type="text" class="form-control"  name="audioFileType" value="podcast" style="display:none ;">
+            <button type="submit" class="btn btn-default">Submit</button>
+            
+        </form>
+
+
+
+
+
+        <form id="audiobook_form" action="/create" method="POST" style="display: none;">
+            <h2>AudioBook</h2>
+            <hr><hr>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" class="form-control" id="author" placeholder="Enter author" name="author">
+            </div>
+            <div class="form-group">
+                <label for="narrator">Narrator:</label>
+                <input type="text" class="form-control" id="narrator" placeholder="Enter narrator" name="narrator">
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration:</label>
+                <input type="number" class="form-control" id="duration" placeholder="Enter duration" name="duration">
+            </div>
+            <input type="text" class="form-control"  name="audioFileType" value="audio_book" style="display:none ;">
+            <button type="submit" class="btn btn-default">Submit</button>
+           
+        </form>
+
+
+
+    </div>
+
+
+
+</body>
+<script>
+
+    $(document).ready(function () {
+        $('#song').click(function () {
+            $('#song_form').toggle(1000)
+        })
+
+        $('#podcast').click(function () {
+            $('#podcast_form').toggle(1000)
+        })
+
+        $('#audiobook').click(function () {
+            $('#audiobook_form').toggle(1000)
+        })
+
+
+    });
+
+
+</script>
+
+</html>

@@ -23,20 +23,24 @@ Routes:
 In this project we have 4 routes:
 
 (1) Add files:
+
 http://localhost:5000/create 
 
 (2) Fetch Files:
-http://localhost:5000/"<audioFileType>"
-http://localhost:5000/“<audioFileType>/<audioFileID>”
+
+http://localhost:5000/audioFileType
+
+
+http://localhost:5000/audioFileType/audioFileID
 
 (3) Update files info:
 
-http://localhost:5000/update/"<audioFileType>/<audioFileID>"
+http://localhost:5000/update/audioFileType/audioFileID
 
 
 (4) Delete file info:
 
-http://localhost:5000/delete/"<audioFileType>/<audioFileID>"
+http://localhost:5000/delete/audioFileType/audioFileID
 
 
 Database used:
